@@ -70,23 +70,23 @@
         <td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px 1px 0px 1px solid black;">
 		2.&emsp;SURNAME
 		</td>
-		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">{{ employee.surname | upper }}</td>
+		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.surname | upper }}</td>
     </tr>
 	<tr>
 	    <td colspan="3" rowspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 0px 1px 0px 1px solid black;">
 		&emsp;&emsp;FIRST NAME
 		</td>
-		<td colspan="9" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">&nbsp;</td>
+		<td colspan="9" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{ employee.first_name| upper }}</td>
 		<td colspan="3" style="height: 0.125in; font-size: 62.5%; border: 1px 1px 0px 1px solid black; background-color:lightgray;"><sup>NAME EXTENSION (JR, SR)</sup></td>
     </tr>
 	<tr>
-		<td colspan="3" style="height: 0.125in; font-size: 62.5%; border: 0px 1px 1px 1px solid black; background-color:lightgray;"><sup>&nbsp;{{ employee.middle_name| upper }}</sup></td>
+		<td colspan="3" style="height: 0.125in; font-size: 62.5%; border: 0px 1px 1px 1px solid black; background-color:lightgray;"><sup>&nbsp;{{ employee.name_ext| upper }}</sup></td>
     </tr>
 	<tr>
 		<td colspan="3" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 0px 1px 1px 1px solid black;">
 		&emsp;&emsp;MIDDLE NAME
 		</td>
-		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">{{employee.middle_name | upper}}</td>
+		<td colspan="12" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">&nbsp;{{employee.middle_name | upper}}</td>
     </tr>
 	<tr>
         <td colspan="3" rowspan="2" style="height: 0.25in; font-size: 62.5%; background-color:lightgray; border: 1px solid black;">
@@ -357,10 +357,10 @@
 		<td colspan="2" style="height: 0.125in; font-size: 47.5%; background-color:lightgray; border: 1px 1px 0px 1px solid black;">
 			NAME EXTENSION (JR, SR)
 		</td>
-		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 52.5%; border: 1px solid black;">
+		<td colspan="4" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">
 			&nbsp;{{ employee.child_name | upper }}
 		</td>
-		<td colspan="2" rowspan="2" style="height: 0.125in; font-size: 52.5%; border: 1px solid black;">
+		<td colspan="2" rowspan="2" style="height: 0.125in; font-size: 62.5%; border: 1px solid black;">
 			&nbsp;{{ employee.child_birth | upper }}
 		</td>
 	</tr>
