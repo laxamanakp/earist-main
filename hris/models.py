@@ -6,64 +6,106 @@ from datetime import time
 
 
 class Employee(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True,unique=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, blank=True, unique=True, on_delete=models.CASCADE)
     profile_pic = models.ImageField(default="Default_pfp.jpg", null=True, blank=True)
-    employee_id = models.CharField(max_length=20,unique=True)
-    surname = models.CharField(max_length=100)
-    first_name = models.CharField(max_length=100)
-    middle_name = models.CharField(max_length=100, null=True, blank=True)
-    email = models.EmailField(blank=True, null=True)
-    employment_status = models.CharField(max_length=100, null=True, blank=True)
-    name_ext = models.CharField(max_length=10, blank=True, null=True)
-    date_of_birth = models.DateField(blank=True, null=True)
-    place_of_birth = models.CharField(max_length=100, blank=True, null=True)
-    sex = models.CharField(max_length=10, blank=True, null=True)
-    civil_status = models.CharField(max_length=20, blank=True, null=True)
-    height_m = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-    weight_kg = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
-    blood_type = models.CharField(max_length=10, blank=True, null=True)
-    gsis_no = models.CharField(max_length=20, blank=True, null=True)
-    pagibig_no = models.CharField(max_length=20, blank=True, null=True)
-    philhealth_no = models.CharField(max_length=20, blank=True, null=True)
-    sss_no = models.CharField(max_length=20, blank=True, null=True)
-    tin_no = models.CharField(max_length=20, blank=True, null=True)
-    agency_em = models.CharField(max_length=100, blank=True, null=True)
-    citizenship = models.CharField(max_length=50, blank=True, null=True)
-    residential_house_no = models.CharField(max_length=10, blank=True, null=True)
-    residential_street = models.CharField(max_length=100, blank=True, null=True)
-    residential_subd = models.CharField(max_length=100, blank=True, null=True)
-    residential_brgy = models.CharField(max_length=100, blank=True, null=True)
-    residential_city = models.CharField(max_length=100, blank=True, null=True)
-    residential_province = models.CharField(max_length=100, blank=True, null=True)
-    residential_zipcode = models.CharField(max_length=10, blank=True, null=True)
-    permanent_house_no = models.CharField(max_length=10, blank=True, null=True)
-    permanent_street = models.CharField(max_length=100, blank=True, null=True)
-    permanent_subd = models.CharField(max_length=100, blank=True, null=True)
-    permanent_brgy = models.CharField(max_length=100, blank=True, null=True)
-    permanent_city = models.CharField(max_length=100, blank=True, null=True)
-    permanent_province = models.CharField(max_length=100, blank=True, null=True)
-    permanent_zipcode = models.CharField(max_length=10, blank=True, null=True)
-    telephone = models.CharField(max_length=20, blank=True, null=True)
-    mobile_number = models.CharField(max_length=20, blank=True, null=True)
-    spouse_surname = models.CharField(max_length=100, blank=True, null=True)
-    spouse_first_name = models.CharField(max_length=100, blank=True, null=True)
-    spouse_middle_name = models.CharField(max_length=100, blank=True, null=True)
-    spouse_name_ext = models.CharField(max_length=10, blank=True, null=True)
-    spouse_occupation = models.CharField(max_length=100, blank=True, null=True)
-    spouse_employer = models.CharField(max_length=100, blank=True, null=True)
-    spouse_business_address = models.CharField(max_length=200, blank=True, null=True)
-    spouse_telephone = models.CharField(max_length=20, blank=True, null=True)
-    elementary_education = models.CharField(max_length=200, blank=True, null=True)
-    secondary_education = models.CharField(max_length=200, blank=True, null=True)
-    father_surname = models.CharField(max_length=100, blank=True, null=True)
-    father_first_name = models.CharField(max_length=100, blank=True, null=True)
-    father_middle_name = models.CharField(max_length=100, blank=True, null=True)
-    father_name_ext = models.CharField(max_length=10, blank=True, null=True)
-    mother_surname = models.CharField(max_length=100, blank=True, null=True)
-    mother_first_name = models.CharField(max_length=100, blank=True, null=True)
-    mother_middle_name = models.CharField(max_length=100, blank=True, null=True)
-    employment_status = models.CharField(max_length=100, blank=True, null=True)
-    date_created = models.DateTimeField(auto_now_add=True, null= True)
+    employee_id = models.CharField(max_length=20, unique=True)  # Employee ID
+    surname = models.CharField(max_length=100, null=True, blank=True)  # Surname
+    first_name = models.CharField(max_length=100, null=True, blank=True)  # First Name
+    middle_name = models.CharField(max_length=100, null=True, blank=True)  # Middle Name
+    email = models.EmailField(blank=True, null=True)  # Email Address
+    employment_status = models.CharField(max_length=100, null=True, blank=True)  # Employment Status
+    name_ext = models.CharField(max_length=10, blank=True, null=True)  # Name Extension
+    date_of_birth = models.DateField(blank=True, null=True)  # Date of Birth
+    place_of_birth = models.CharField(max_length=100, blank=True, null=True)  # Place of Birth
+    sex = models.CharField(max_length=10, blank=True, null=True)  # Sex
+    civil_status = models.CharField(max_length=20, blank=True, null=True)  # Civil Status
+    height_m = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)  # Height (m)
+    weight_kg = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)  # Weight (kg)
+    blood_type = models.CharField(max_length=10, blank=True, null=True)  # Blood Type
+    gsis_no = models.CharField(max_length=20, blank=True, null=True)  # GSIS Number
+    pagibig_no = models.CharField(max_length=20, blank=True, null=True)  # Pag-IBIG Number
+    philhealth_no = models.CharField(max_length=20, blank=True, null=True)  # PhilHealth Number
+    sss_no = models.CharField(max_length=20, blank=True, null=True)  # SSS Number
+    tin_no = models.CharField(max_length=20, blank=True, null=True)  # TIN Number
+    agency_em = models.CharField(max_length=100, blank=True, null=True)  # Agency Employment
+    citizenship = models.CharField(max_length=50, blank=True, null=True)  # Citizenship
+    residential_house_no = models.CharField(max_length=10, blank=True, null=True)  # Residential House No.
+    residential_street = models.CharField(max_length=100, blank=True, null=True)  # Residential Street
+    residential_subd = models.CharField(max_length=100, blank=True, null=True)  # Residential Subdivision
+    residential_brgy = models.CharField(max_length=100, blank=True, null=True)  # Residential Barangay
+    residential_city = models.CharField(max_length=100, blank=True, null=True)  # Residential City
+    residential_province = models.CharField(max_length=100, blank=True, null=True)  # Residential Province
+    residential_zipcode = models.CharField(max_length=10, blank=True, null=True)  # Residential Zip Code
+    permanent_house_no = models.CharField(max_length=10, blank=True, null=True)  # Permanent House No.
+    permanent_street = models.CharField(max_length=100, blank=True, null=True)  # Permanent Street
+    permanent_subd = models.CharField(max_length=100, blank=True, null=True)  # Permanent Subdivision
+    permanent_brgy = models.CharField(max_length=100, blank=True, null=True)  # Permanent Barangay
+    permanent_city = models.CharField(max_length=100, blank=True, null=True)  # Permanent City
+    permanent_province = models.CharField(max_length=100, blank=True, null=True)  # Permanent Province
+    permanent_zipcode = models.CharField(max_length=10, blank=True, null=True)  # Permanent Zip Code
+    telephone = models.CharField(max_length=20, blank=True, null=True)  # Telephone Number
+    mobile_number = models.CharField(max_length=20, blank=True, null=True)  # Mobile Number
+    spouse_surname = models.CharField(max_length=100, blank=True, null=True)  # Spouse Surname
+    spouse_first_name = models.CharField(max_length=100, blank=True, null=True)  # Spouse First Name
+    spouse_middle_name = models.CharField(max_length=100, blank=True, null=True)  # Spouse Middle Name
+    spouse_name_ext = models.CharField(max_length=10, blank=True, null=True)  # Spouse Name Extension
+    spouse_occupation = models.CharField(max_length=100, blank=True, null=True)  # Spouse Occupation
+    spouse_employer = models.CharField(max_length=100, blank=True, null=True)  # Spouse Employer
+    spouse_business_address = models.CharField(max_length=200, blank=True, null=True)  # Spouse Business Address
+    spouse_telephone = models.CharField(max_length=20, blank=True, null=True)  # Spouse Telephone Number
+    elementary_education = models.CharField(max_length=200, blank=True, null=True)  # Elementary Education
+    secondary_education = models.CharField(max_length=200, blank=True, null=True)  # Secondary Education
+    vocational_or_trade_course = models.CharField(max_length=200, blank=True, null=True)  # Vocational/Trade Course
+    college_education = models.CharField(max_length=200, blank=True, null=True)  # College Education
+    graduate_studies = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies
+    elementary_basic_education = models.CharField(max_length=200, blank=True, null=True)  # Elementary Education Basic
+    secondary_basic_education = models.CharField(max_length=200, blank=True, null=True)  # Secondary Education Basic
+    vocational_basic_education = models.CharField(max_length=200, blank=True, null=True)  # Vocational/Trade Course Basic
+    college_basic_education = models.CharField(max_length=200, blank=True, null=True)  # College Education Basic
+    graduate_studies_basic_education = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies Basic
+    elementary_graduate_from = models.CharField(max_length=200, blank=True, null=True)  # Elementary From
+    elementary_graduate_to = models.CharField(max_length=200, blank=True, null=True)  # Elementary to
+    secondary_graduate_from = models.CharField(max_length=200, blank=True, null=True)  # Secondary From
+    secondary_graduate_to = models.CharField(max_length=200, blank=True, null=True)  # Secondary to
+    vocational_graduate_from = models.CharField(max_length=200, blank=True, null=True)  # Vocational From
+    vocational_graduate_to = models.CharField(max_length=200, blank=True, null=True)  # Vocational to
+    college_graduate_from = models.CharField(max_length=200, blank=True, null=True)  # College From
+    college_graduate_to = models.CharField(max_length=200, blank=True, null=True)  # College to
+    graduate_graduate_from = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies From
+    graduate_studies_graduate_to = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies to
+    elementary_highest_level_earned = models.CharField(max_length=200, blank=True, null=True)  # Elementary Highest Level
+    secondary_highest_level_earned = models.CharField(max_length=200, blank=True, null=True)  # Secondary Highest Level
+    vocational_highest_level_earned = models.CharField(max_length=200, blank=True, null=True)  # Vocational Highest Level
+    college_highest_level_earned = models.CharField(max_length=200, blank=True, null=True)  # College Highest Level
+    graduate_studies_highest_level_earned = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies Highest Level
+    elementary_year_graduated = models.CharField(max_length=200, blank=True, null=True)  # Elementary Highest Year Graduated
+    secondary_year_graduated = models.CharField(max_length=200, blank=True, null=True)  # Secondary Highest Year Graduated
+    vocational_year_graduated = models.CharField(max_length=200, blank=True, null=True)  # Vocational Highest Year Graduated
+    college_year_graduated = models.CharField(max_length=200, blank=True, null=True)  # College Highest Year Graduated
+    graduate_studies_year_graduated = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies Year Graduated
+    elementary_honors = models.CharField(max_length=200, blank=True, null=True)  # Elementary Highest Honors
+    secondary_honors = models.CharField(max_length=200, blank=True, null=True)  # Secondary Highest Honors
+    vocational_honors = models.CharField(max_length=200, blank=True, null=True)  # Vocational Highest Honors
+    college_honors = models.CharField(max_length=200, blank=True, null=True)  # College Highest Honors
+    graduate_studies_honors = models.CharField(max_length=200, blank=True, null=True)  # Graduate Studies Honors
+    father_surname = models.CharField(max_length=100, blank=True, null=True)  # Father's Surname
+    father_first_name = models.CharField(max_length=100, blank=True, null=True)  # Father's First Name
+    father_middle_name = models.CharField(max_length=100, blank=True, null=True)  # Father's Middle Name
+    father_name_ext = models.CharField(max_length=10, blank=True, null=True)  # Father's Name Extension
+    mother_surname = models.CharField(max_length=100, blank=True, null=True)  # Mother's Surname
+    mother_first_name = models.CharField(max_length=100, blank=True, null=True)  # Mother's First Name
+    mother_middle_name = models.CharField(max_length=100, blank=True, null=True)  # Mother's Middle Name
+    child_name = models.CharField(max_length=100, blank=True, null=True)  # Children's Full Name
+    child_birth = models.DateField(blank=True, null=True)  # Children's Date of Birth
+    child_name_2 = models.CharField(max_length=100, blank=True, null=True)  # 2nd Children's Full Name
+    child_birth_2 = models.DateField(blank=True, null=True)  # Children's Date of Birth
+    child_name_3 = models.CharField(max_length=100, blank=True, null=True)  # 3rd Children's Full Name
+    child_birth_3 = models.DateField(blank=True, null=True)  # Children's Date of Birth
+    child_name_4 = models.CharField(max_length=100, blank=True, null=True)  # 4th Children's Full Name
+    child_birth_4 = models.DateField(blank=True, null=True)  # Children's Date of Birth
+    child_name_5 = models.CharField(max_length=100, blank=True, null=True)  # 5th Children's Full Name
+    child_birth_5 = models.DateField(blank=True, null=True)  # Children's Date of Birth
+    date_created = models.DateTimeField(auto_now_add=True, null=True)  # Date Created
 
     #pds2 Civil Service Eligibility
     credentials = models.CharField(max_length=100, blank=True, null=True)
