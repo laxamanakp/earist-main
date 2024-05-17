@@ -169,6 +169,7 @@ class Employee(models.Model):
     non_academic_distinctions_7 = models.CharField(max_length=150, blank=True, null=True)    #For PDS3 VIII row 7
     special_skills_7 = models.CharField(max_length=150, blank=True, null=True)
     membership_association_7 = models.CharField(max_length=150, blank=True, null=True)
+    
     ref_name_1 = models.CharField(max_length=100, blank=True, null=True)                            #For PDS4 REFERENCES
     ref_adress1 = models.CharField(max_length=100, blank=True, null=True)
     fer_num_1 = models.CharField(max_length=20, blank=True, null=True)

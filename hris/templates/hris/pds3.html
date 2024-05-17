@@ -72,7 +72,7 @@
 	</tr>
 	<tr>
 		<td colspan="7" style="height: 0.3in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp; {{ employee.organization_name_3 | upper}}{{  employee.organization_address_3 | upper}}
+			&nbsp; {{ employee.organization_name_3 | upper}} {{  employee.organization_address_3 | upper}}
 		</td>
 		<td colspan="1" style="height: 0.3in; font-size: 52.5%; border: 1px solid black;">
 			&nbsp;{{ employee.from_date_3 | upper}}
@@ -223,7 +223,7 @@
 	</tr>
 	<tr>
 		<td colspan="7" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;{{ employee.title_of_program2 | upper }}}
+			&nbsp;{{ employee.title_of_program2 | upper }}
 		</td>
 		<td colspan="1" style="height: 0.25in; font-size: 52.5%; border: 1px solid black;">
 			&nbsp;{{ employee.from_date_A2  | upper }}
@@ -278,7 +278,7 @@
 			&nbsp;{{ employee.type_of_ld_4 | upper }}
 		</td>
 		<td colspan="4" style="height: 0.25in; font-size: 62.5%; border: 1px solid black;">
-			&nbsp;{{ employee.conducted_by_4 | upper }}}
+			&nbsp;{{ employee.conducted_by_4 | upper }}
 		</td>
 	</tr>
 	<tr>
@@ -793,6 +793,7 @@
 		<a href="{% url 'pds2' %}">2</a></li>
 		<a class="active" href="{% url 'pds3' %}">3</a></li>
 		<a href="{% url 'pds4' %}">4</a></li>
+		<a href="{% url 'account' %}">Profile</a>
 		</br>
 		</div>
 </html>
